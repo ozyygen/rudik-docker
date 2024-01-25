@@ -18,4 +18,6 @@ RUN git clone https://github.com/ozyygen/rudik.git
 
 RUN rm -f /rudik/src/main/config/Configuration.xml
 
+COPY ./Configuration.xml /rudik/src/main/config/Configuration.xml
+
 RUN cd rudik && mvn -U clean install -DskipTests

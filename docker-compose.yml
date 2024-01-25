@@ -1,0 +1,18 @@
+version: “3.3”
+services:
+  virtuoso_db:
+    image: pkleef/virtuoso-opensource-7
+    volumes:
+      - ./data:/database/data
+      - ./scripts:/opt/virtuoso-opensource/initdb.d
+    environment:
+      - DBA_PASSWORD=dba
+    ports:
+      - 1111:1111
+      - 8890:8890
+  ubuntu:
+    build: .
+    tty: true
+    stdin_open: true
+    volumes:
+      - ./Configuration.xml:/app/rudik/src/main/config/Configuration.xml

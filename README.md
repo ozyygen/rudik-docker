@@ -11,7 +11,11 @@ Before you begin, ensure you have the following installed on your system:
 
 ## Installation
 Run the following command to build the Docker images specified in the docker-compose.yml file:
+```sh
 docker-compose build
+```
 
 ## Running
+```sh
 docker-compose up
+```

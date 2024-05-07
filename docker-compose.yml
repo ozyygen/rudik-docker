@@ -18,7 +18,7 @@ services:
       tty: true
       stdin_open: true
       volumes:
-        - ./Configuration.xml:/RuDiK-GUI/src/main/config/YagoConfiguration.xml
+        - ./Configuration.xml:/YagoConfiguration.xml
 
    rudik:
       build:

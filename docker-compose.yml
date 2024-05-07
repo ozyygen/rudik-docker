@@ -1,6 +1,7 @@
-version: “3.3”
+version: "3.3"
+
 services:
-  virtuoso_db:
+   virtuoso_db:
     image: pkleef/virtuoso-opensource-7
     volumes:
       - ./data:/database/data
@@ -10,9 +11,18 @@ services:
     ports:
       - 1111:1111
       - 8890:8890
-  ubuntu:
-    build: .
-    tty: true
-    stdin_open: true
-    volumes:
-      - ./Configuration.xml:/app/rudik/src/main/config/Configuration.xml
+
+   ubuntu:
+      build:
+         context: ./ubuntu
+      tty: true
+      stdin_open: true
+      volumes:
+        - ./Configuration.xml:/RuDiK-GUI/src/main/config/YagoConfiguration.xml
+
+   rudik:
+      build:
+         context: ./rudik
+      ports:
+         - "9090:9090"
+      command: ["java", "-cp", "target/rule_miner-0.0.1-SNAPSHOT.jar", "asu.edu.rule_miner.rudik.App"]

@@ -11,7 +11,7 @@ This guide is to help you set up and run the Rudik project (https://github.com/s
 **rudik**: The main Rudik service.
 
 ## Important Notes
-- Rudik runs manually in Docker. To discover the rules you should run below code in the rudik image:
+- Rudik runs manually in Docker. To discover the rules you should run below code in the rudik image (please wait until ontotext is available on localhost:7200):
 
 ```
 java -cp target/rule_miner-0.0.1-SNAPSHOT.jar asu.edu.rule_miner.rudik.App

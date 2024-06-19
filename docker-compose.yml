@@ -7,18 +7,9 @@ services:
       ports:
         - 7200:7200
 
-      #command: ["bash", "-c", "virtuoso-t +wait && tail -f /dev/null"]
-
-  ubuntu:
-    profiles:
-      - donotstart
-    build: .
-    tty: true
-    stdin_open: true
 
   rudik:
 
     build:
       context: ./rudik
-    #command: ["java", "-cp", "target/rule_miner-0.0.1-SNAPSHOT.jar", "asu.edu.rule_miner.rudik.App"]
     command: ["tail", "-f", "/dev/null"]

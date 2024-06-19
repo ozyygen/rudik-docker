@@ -22,4 +22,3 @@ RUN mvn -U clean install -DskipTests
 
 # rudik/Dockerfile
 CMD ["java", "-cp", "target/rule_miner-0.0.1-SNAPSHOT.jar", "asu.edu.rule_miner.rudik.App"]
-#CMD ["sh", "-c", "java -cp target/rule_miner-0.0.1-SNAPSHOT.jar asu.edu.rule_miner.rudik.App && tail -f /dev/null"]

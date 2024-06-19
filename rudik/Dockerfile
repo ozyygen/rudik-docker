@@ -13,8 +13,13 @@ WORKDIR /app/Rudik
 
 COPY pom.xml /app/Rudik/pom.xml
 
+COPY Configuration.xml /app/Rudik/src/main/config/Configuration.xml
+
+COPY App.java /app/Rudik/src/main/java/asu/edu/rule_miner/rudik/App.java
+
+
 RUN mvn -U clean install -DskipTests
 
 # rudik/Dockerfile
-#CMD ["java", "-cp", "src/main/java", "asu.edu.rule_miner.rudik.App"]
 CMD ["java", "-cp", "target/rule_miner-0.0.1-SNAPSHOT.jar", "asu.edu.rule_miner.rudik.App"]
+#CMD ["sh", "-c", "java -cp target/rule_miner-0.0.1-SNAPSHOT.jar asu.edu.rule_miner.rudik.App && tail -f /dev/null"]

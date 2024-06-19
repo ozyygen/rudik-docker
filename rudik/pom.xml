@@ -37,7 +37,7 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-		<mainClass>asu.edu.rule_mine.rudik.App</mainClass>
+		<mainClass>asu.edu.rule_mine.rudik.App_2</mainClass>
 	</properties>
 
 

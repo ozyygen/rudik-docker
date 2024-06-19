@@ -1,28 +1,24 @@
 version: "3.3"
-
 services:
-   virtuoso_db:
-    image: pkleef/virtuoso-opensource-7
-    volumes:
-      - ./data:/database/data
-      - ./scripts:/opt/virtuoso-opensource/initdb.d
-    environment:
-      - DBA_PASSWORD=dba
-    ports:
-      - 1111:1111
-      - 8890:8890
-
-   ubuntu:
-      build:
-         context: ./ubuntu
-      tty: true
-      stdin_open: true
+  ontotext:
+      image: ontotext/graphdb:10.6.4
       volumes:
-        - ./Configuration.xml:/YagoConfiguration.xml
-
-   rudik:
-      build:
-         context: ./rudik
+      - ./graphdb-data:/opt/graphdb/home
       ports:
-         - "9090:9090"
-      command: ["java", "-cp", "target/rule_miner-0.0.1-SNAPSHOT.jar", "asu.edu.rule_miner.rudik.App"]
+        - 7200:7200
+
+      #command: ["bash", "-c", "virtuoso-t +wait && tail -f /dev/null"]
+
+  ubuntu:
+    profiles:
+      - donotstart
+    build: .
+    tty: true
+    stdin_open: true
+
+  rudik:
+
+    build:
+      context: ./rudik
+    #command: ["java", "-cp", "target/rule_miner-0.0.1-SNAPSHOT.jar", "asu.edu.rule_miner.rudik.App"]
+    command: ["tail", "-f", "/dev/null"]

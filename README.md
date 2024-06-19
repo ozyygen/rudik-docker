@@ -37,5 +37,7 @@ java -cp target/rule_miner-0.0.1-SNAPSHOT.jar asu.edu.rule_miner.rudik.App
 
 - Target relation and subject & object types are hard-coded in App.java. Please change them accordingly.
 
+- Negative and positive rule results can be found under "negative_horn_rules.txt" and "positive_horn_rules.txt" in the rudik image file section.
+
 
 

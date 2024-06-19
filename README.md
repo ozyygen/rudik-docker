@@ -24,7 +24,7 @@ docker-compose up
 ```
 
 ## Explanation
-**ontotext**: Runs GraphDB and exposes it on port 7200. After the build, you should create a new repository on GraphDB and upload your RDF graph. Afterwards, you should provide it's SPAQRL endpoint to the related field in rudik/Configuration.xml. For SPAQRL endpoint URI, you can inspect GRAPHDB SPAQRL query while it's running. You may find it during the post request.
+**ontotext**: Runs GraphDB and exposes it on port 7200. After the build, you should create a new repository on GraphDB and upload your RDF graph. Afterwards, you should provide it's SPAQRL endpoint to the related field in rudik/Configuration.xml. For SPAQRL endpoint URI, you can inspect GRAPHDB SPAQRL query page after you run a query. You may find it during the post request.
 
 **rudik**: The main Rudik service.
 
